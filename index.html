@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="topcoat-button-list-desktop-dark.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <script type="text/javascript" src="global.js"></script>
+    <script type="text/javascript" src="commands.js"></script>
+    </head>
+  <body>
+
+     <div id="playground-switch">
+      <select class="topcoat-select" id="selectPlayground" onchange="changeFunc();">
+        <option selected value="index.html">Classic</option>
+        <option value="smc/index.html">Scalable Bidness</option>
+        <option value="coachmarks/index.html">Coachmarks</option>        
+        <option value="timeline/index.html">Timeline</option>
+        <option value="swingset/index.html">Swingset</option>
+      </select>
+    </div>
+      
+      <aside id="tools">
+      <div class="topcoat-button-list">
+        <div id="tool-move" class="topcoat-button-list__item">
+          <button title="Move"
+              onClick='Commands.moveTool({autoSelect:true, groups:false});'
+       
+              class="topcoat-button-list__button"/>
+        </div>
+          
+          
+                  <div id="tool-move" class="topcoat-button-list__item">
+          <button title="Move"
+              onClick='Commands.moveTool({autoSelect:true, groups:true});'
+       
+              class="topcoat-button-list__button"/>
+        </div>
+          
+          
+                  <div id="tool-move" class="topcoat-button-list__item">
+          <button title="Move"
+              onClick='Commands.moveTool({autoSelect:true, groups:true, transform:true});'
+       
+              class="topcoat-button-list__button"/>
+        </div>
+          
+          
+        <div id="tool-text" class="topcoat-button-list__item">
+          <button title="Text"
+              onClick='Commands.selectTool("Adobe Type Tool");'
+
+              class="topcoat-button-list__button"></button>
+        </div>
+        <div id="tool-rounded-rect" class="topcoat-button-list__item">
+            <button title="Rounded Rectangle"
+                
+                onClick='Commands.selectTool("Adobe Rounded Rectangle Tool");'
+                
+                
+                class="topcoat-button-list__button"></button>
+        </div>
+        
+ <!--       <div id="tool-rounded-rect" class="topcoat-button-list__item">
+            <button title="Rounded Rectangle"
+                
+                onClick='PS.call("slct",{"null":{ref:{"class":"ellipseTool"}}})'
+                
+                class="topcoat-button-list__button"></button>
+        </div>
+     -->
+        
+    
+        <div id="tool-blue-pencil" class="topcoat-button-list__item">
+            <button title="Blue Pencil"
+                onClick='Commands.bluePencil();'
+                class="topcoat-button-list__button"></button>
+        </div>
+
+<!--
+<div id="tool-blue-pencil" class="topcoat-button-list__item">
+    <button title="Blue Pencil"
+        onClick='Commands.makeLayer("fooLayer")'
+        class="topcoat-button-list__button"></button>
+</div>
+-->
+
+      </div>
+    </aside>
+
+    <aside id="properties" class="panel">
+
+      <select id="font">
+        <option>Typeface name</option>
+        <option>Typeface name</option>
+        <option>Typeface name</option>
+        <option>Typeface name</option>
+      </select>
+
+      <div class="linked-field">
+        <a href="#" class="btn-link"></a>
+        <input type="text" placeholder="top">
+        <input type="text" placeholder="right">
+        <input type="text" placeholder="bottom">
+        <input type="text" placeholder="left">
+      </div>
+
+      <div class="property-color">
+        <input id="the-color" type="color" value="#bada55">
+        <label for="the-color">#bada55</label>
+      </div>
+
+    </aside>
+    
+    
+    <aside id="toggle" >
+        <div   class="topcoat-button-list">
+            
+            <div id="toggle-classic" class="topcoat-button-list__item">
+                <button id="goClassic" title="GoClassic"
+                    
+                    onClick='Commands.setClassic(true)'
+                    
+                    class="topcoat-button-list__button"></button>
+            </div>
+            
+            <div id="toggle-dev" class="topcoat-button-list__item">
+                
+                <button title="GoCustom"
+                    
+                    onClick='Commands.showBoth()'
+                    
+                    class="topcoat-button-list__button"></button>
+            </div>
+
+
+    <div id="toggle-custom" class="topcoat-button-list__item">
+    
+    <button id="goCustom" title="GoCustom"
+        
+        onClick='Commands.setClassic(false)'
+        
+        class="topcoat-button-list__button"></button>
+    </div>
+
+        </div>
+
+    </aside>
+      
+        <aside id="slideshow" ><div   class="topcoat-button-list">
+           
+                   <input type='range' id='frameSeek' min='0' max='89999' step='1' onchange="AE.activeItem.frame=this.value"/>
+    
+        
+            
+            <!-- <div id="rewindSlideshow" class="topcoat-button-list__item">
+                <button 
+                    onClick='AE.activeItem.frame = 0'
+                    class="topcoat-button-list__button"></button>
+            </div>
+
+                        <div id="backupSlideshow" class="topcoat-button-list__item">
+                <button 
+                    onClick='AE.activeItem.frame = AE.activeItem.frame -1 '
+                    class="topcoat-button-list__button"></button>
+            </div>
+            
+                                    <div id="advanceSlideshow" class="topcoat-button-list__item">
+                <button 
+                    onClick='AE.activeItem.frame++'
+                    class="topcoat-button-list__button"></button>
+            </div>
+            
+                                                <div id="advanceSlideshow" class="topcoat-button-list__item">
+                <button 
+                    onClick='AE.activeItem.frame = AE.activeItem.frames-1'
+                    class="topcoat-button-list__button"></button>
+            </div> -->
+
+        </div></aside>
+      
+    
+    <!--
+   <aside>
+    <button label="submit" onClick="ask(this)">"property":{"class":"Layers", "value":"cMRLayer" }</button>
+        <button label="submit" onClick="ask(this)">"class":"Lyr "</button>
+   <button label="submit" onClick="askClass(this)">"class":"SoFi "</button>
+   <button label="submit" onClick="askClass(this)">"class":"Dcmn"</button>
+   <button label="submit" onClick="askClass(this)">BckC</button>
+        <button label="submit" onClick="Commands.getForegroundColor()">-foreground Color-</button>
+        <button label="submit" onClick="Commands.getDocID(1)">-docID-</button>
+        <button label="submit" onClick="Commands.getDocCount()">docCount</button>
+        <button label="submit" onClick="ask(this)">"ref":"capp",  "property":"NmbD"</button>
+        <button label="submit" onClick="ask(this)">"ref":"Dcmn",  "property":"NmbL"</button>
+        <button label="submit" onClick="ask(this)">"ref":"Dcmn", "enumType":"Ordn", "value":"Trgt"</button>
+        <button label="submit" onClick="ask(this)">"ref":"Dcmn", "enumType":"Ordn", "value":"Trgt",  "property":"NmbL"</button>
+        <button label="submit" onClick="askClass(this)">Dcmn</button>
+        <button label="submit" onClick="askClass(this)">Lyrs</button>
+        <button label="submit" onClick="askClass(this)">Nm  </button>
+         <pre id='result' >
+        </pre>
+    </aside>
+    -->
+    
+   <!--
+    #define typeOrdinal						'Ordn'	// enumAll, enumFirst, enumLast, enumNext, enumPrevious, enumMiddle, enumAny, enumNone, enumTarget, enumForward, enumBackward, enumFront, enumBack, enumMerged, enumLinked.
+-->
+<!--
+<aside id="goCustom" class="panel">
+    
+    <label><input type='checkbox' onChange='PS.tools = this.checked' onPageShow='this.checked = PS.tools'/>tools</label>
+    <label><input type='checkbox' onChange='PS.controls = this.checked'/>controls</label>
+    <label><input type='checkbox' onChange='PS.tabs = this.checked'/>tabs</label>
+    <label><input type='checkbox' onChange='PS.appBar = this.checked'/>app bar</label>
+    
+</aside>
+-->
+   
+      <aside id="lotsoftools" class="hidden">
+      <div id="icondemo" class="topcoat-button-list">
+           <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/alert.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/arrow_down.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/arrow_left.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/arrow_right.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/arrow_up.svg);" class="topcoat-button-list__button"></button> </div>
+          <!--
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/attachment.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/audio.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/audiooff.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/back.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/back_light.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/behance.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/bookmark.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/brush.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/build.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/calendar.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/call.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/camera.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cancel.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cart.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/chat.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/checkmark.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/circle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/circle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cloud.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/collapse.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/comment.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/computer.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/delete.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/download.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/dribble.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/email.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/error.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/expand.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/facebook.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/favorite.svg);" class="topcoat-button-list__button"></button> </div>
+           <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/calendar.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/call.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/camera.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cancel.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cart.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/chat.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/checkmark.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/circle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/circle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cloud.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/collapse.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/comment.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/computer.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/delete.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/download.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/dribble.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/email.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/error.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/expand.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/facebook.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/favorite.svg);" class="topcoat-button-list__button"></button> </div>
+           <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/calendar.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/call.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/camera.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cancel.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cart.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/chat.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/checkmark.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/circle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/circle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cloud.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/collapse.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/comment.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/computer.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/delete.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/download.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/dribble.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/email.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/error.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/expand.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/facebook.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/favorite.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/feedback.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/flickr.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/folder.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/github.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/github_text.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/googleplus.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/group.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/hipstamatic.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/home.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/image.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/image_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/like.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/linkedin.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/listview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/location.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/lock.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/minus.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/next.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/next_light.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/path.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/pencil.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/phone.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/picasa.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/pinterest.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/plugin.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/plus.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/preview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/print.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/question.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rectangle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rectangle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/refresh.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/retweet.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/roundedrectangle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/roundedrectangle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rss.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/save.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/search.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/settings.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/share.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tablet.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/text.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tileview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tumblr.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/twitter.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/unlock.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/user.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/view.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/vimeo.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/w3c.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/wifi.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/wordpress.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/alert.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/arrow_down.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/arrow_left.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/arrow_right.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/arrow_up.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/attachment.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/audio.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/audiooff.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/back.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/back_light.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/behance.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/bookmark.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/brush.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/build.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/calendar.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/call.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/camera.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cancel.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cart.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/chat.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/checkmark.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/circle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/circle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/cloud.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/collapse.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/comment.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/computer.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/delete.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/download.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/dribble.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/email.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/error.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/expand.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/facebook.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/favorite.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/feedback.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/flickr.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/folder.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/github.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/github_text.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/googleplus.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/group.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/hipstamatic.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/home.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/image.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/image_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/like.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/linkedin.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/listview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/location.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/lock.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/minus.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/next.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/next_light.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/path.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/pencil.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/phone.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/picasa.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/pinterest.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/plugin.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/plus.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/preview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/print.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/question.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rectangle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rectangle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/refresh.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/retweet.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/roundedrectangle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/roundedrectangle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rss.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/save.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/search.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/settings.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/share.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tablet.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/text.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tileview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tumblr.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/twitter.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/unlock.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/user.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/view.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/vimeo.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/w3c.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/wifi.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/wordpress.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/image_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/like.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/linkedin.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/listview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/location.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/lock.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/minus.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/next.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/next_light.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/path.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/pencil.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/phone.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/picasa.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/pinterest.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/plugin.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/plus.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/preview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/print.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/question.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rectangle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rectangle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/refresh.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/retweet.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/roundedrectangle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/roundedrectangle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rss.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/save.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/search.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/settings.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/share.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tablet.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/text.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tileview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tumblr.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/twitter.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/unlock.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/user.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/view.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/vimeo.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/w3c.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/wifi.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/wordpress.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/image_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/like.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/linkedin.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/listview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/location.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/lock.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/minus.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/next.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/next_light.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/path.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/pencil.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/phone.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/picasa.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/pinterest.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/plugin.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/plus.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/preview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/print.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/question.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rectangle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rectangle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/refresh.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/retweet.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/roundedrectangle.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/roundedrectangle_outline.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/rss.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/save.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/search.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/settings.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/share.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tablet.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/text.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tileview.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/tumblr.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/twitter.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/unlock.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/user.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/view.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/vimeo.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/w3c.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/wifi.svg);" class="topcoat-button-list__button"></button> </div>
+ <div id="tool-text" class="topcoat-button-list__item"><button style="background-image:url(topcoat/wordpress.svg);" class="topcoat-button-list__button"></button> </div>
+            
+-->
+</div>
+
+    </aside>
+
+
+<script>
+    
+    Commands.setClassic(false);
+    
+    output = function(result) {
+        
+        delete result.XMPMetadataAsUTF8
+        
+        var resultStr =JSON.stringify(result, null, '\t');
+        PS.log(resultStr);
+        
+        
+    }
+    
+    ask = function (elt) {
+        try {
+            Commands.ask('{'+elt.innerHTML+'}');
+        } catch (e) {
+            PS.log(e + "")
+        }
+        
+    }
+
+askClass = function (elt) {
+    
+    try {
+        var className = elt.innerHTML;
+        
+        PS.log(className);
+  
+    var result = PS.simpleGet(className)
+    
+    output(result);
+//        elt = document.getElementById("result");
+//        elt.innerHTML =(resultStr);
+        
+        
+    } catch (e) {
+        PS.log(e + "")
+    }
+    
+}
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+* {
+  -webkit-user-select: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", source-sans-pro, sans-serif;
+  font-weight: 100;
+  text-rendering: optimizeLegibility;
+}
+
+#playground-switch {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: 9999;
+}
+
+.topcoat-select {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  vertical-align: top;
+  outline: none;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.topcoat-select:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.topcoat-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.topcoat-select::-ms-expand {
+  display: none;
+}
+
+.topcoat-select {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  appearance: button;
+  text-indent: 0.01px;
+  text-overflow: '&hellip;';
+  max-width: 150px;
+  padding: 0 8px;
+  padding-right: 23px;
+  font-size: 14px;
+  font-weight: 400;
+  height: 26px;
+  line-height: 26px;
+  letter-spacing: 1px;
+  color: #aaa;
+  vertical-align: top;
+  border-radius: 0;
+  background-color: #282828;
+  border: 1px solid rgba(255,255,255, .1);
+  background-image: url('img/dropdown.svg');
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+
+.topcoat-select:focus {
+  border: 1px solid hsla(227, 100%, 50%, 1);
+  box-shadow: 0 0 0 2px hsla(208, 82%, 69%, 1);
+  outline: 0;
+}

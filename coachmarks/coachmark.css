@@ -1,0 +1,43 @@
+@import "../global.css";
+
+#coach-swatches,
+#coach-tools {
+	position: absolute;
+	display: block;
+	opacity: 0;
+	-webkit-transition: all .6s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+}
+#coach-swatches {
+	top: 250px;
+	right: 50px;
+	background: url(coachmark-assets/coach-swatches.png) no-repeat;
+	background-size: 428px 154px;
+	width: 428px;
+	height: 154px;
+	-webkit-transition-delay: 1s;
+	-webkit-transform: rotate(-5deg);
+	-webkit-transform: origin(center, right);
+}
+#coach-tools {
+	top: 40px;
+	left: 50px;
+	width: 428px;
+	height: 264px;
+	background: url(coachmark-assets/coach-tools.png) no-repeat;
+	background-size: 428px 264px;
+	-webkit-transform: rotate(-5deg);
+	-webkit-transform: origin(center, left);
+}
+#coach-tools.animate {
+	left: 0;
+	opacity: 1;
+	-webkit-transform: rotate(0);
+}
+#coach-swatches.animate {
+	right: 0;
+	opacity: 1;
+	-webkit-transform: rotate(0);
+}
+.hidden {
+	opacity: 0;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="coachmark.css" type="text/css" media="screen">
+    <script type="text/javascript" src="../global.js"></script>
+    <script type="text/javascript">
+        function initMarks() {
+            var coachTools = document.getElementById("coach-tools");
+            var coachSwatches = document.getElementById("coach-swatches");
+
+            console.log("loading the coachmarks");
+            coachTools.className = "animate";
+            coachSwatches.className = "animate";
+        }
+
+        window.onload = initMarks;
+    </script>
+</head>
+
+<body>
+
+    <div id="playground-switch">
+      <select class="topcoat-select" id="selectPlayground" onchange="changeFunc();">
+        <option value="../index.html">Classic</option>
+        <option selected value="../coachmarks/index.html">Coachmarks</option>
+        <option value="../design-shop/index.html">Design Shop</option>  
+        <option value="../playground_line/index.html">Line</option>
+      </select>
+    </div>
+
+    <div id="coach-swatches" class="coachmark"></div>
+    <div id="coach-tools" class="coachmark"></div>
+
+
+    <!-- Don't worry about anything under this comment !-->
+    <script type="text/javascript" src="commands.js"></script>
+    <script type="text/javascript">
+
+        Commands.setClassic(true);
+        output = function(result) {
+            delete result.XMPMetadataAsUTF8
+
+            var resultStr =JSON.stringify(result, null, '\t');
+            PS.log(resultStr);
+
+        }
+
+        ask = function (elt) {
+            try {
+                Commands.ask('{'+elt.innerHTML+'}');
+            } catch (e) {
+                PS.log(e + "")
+            }        
+        }
+
+        askClass = function (elt) {
+            try {
+                var className = elt.innerHTML;
+                PS.log(className);
+
+                var result = PS.simpleGet(className)
+               
+                output(result);
+            } catch (e) {
+                PS.log(e + "")
+            }   
+        }
+    </script>
+
+    <script type="text/javascript" src="commands.js"></script>
+
+</body>
+</html>

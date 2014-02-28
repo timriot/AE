@@ -1,0 +1,337 @@
+@import "global.css";
+
+body {
+	color: #ddd;
+}
+
+#tools, #toggle ,
+.panel {
+	position: absolute;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.4);
+}
+#properties { display:none;}
+#tools, #properties { top: 40px; }
+#tools {
+	left: 40px;
+	border-radius: 6px;
+}
+
+#icondemo {
+    position:absolute;
+    right: 10px;    
+    width:480px;
+}
+
+#slideshow {
+    position:absolute;
+    right: 0px;    
+    bottom: 0px;
+}
+#slideshow div {  width:160px;}
+#slideshow button { float: left;}
+
+
+#toggleIconMess button {background-image: url(topcoat/tileview.svg);}
+#rewindSlideshow button {background-image: url(topcoat/refresh.svg);}
+#backupSlideshow button {background-image: url(topcoat/back_light.svg);}
+#advanceSlideshow button {background-image: url(topcoat/next.svg);}
+/*
+@-webkit-keyframes slidePanelOn {
+0% {left: 100%;}
+100% { right: 0;}
+}
+
+@-webkit-keyframes slidePanelOff {
+0% { right: 0;}
+99% {left: 100%;}
+100% {left:100%;
+    display:none;}
+}
+
+
+.classic #icondemo {
+-webkit-animation:slidePanelOff 1s; 
+}
+
+.dev #icondemo {
+-webkit-animation:slidePanelOn 1s; 
+}
+
+.custom #icondemo {
+-webkit-animation:slidePanelOn 1s; 
+}
+*/
+
+#icondemo .topcoat-button-list__item button {
+    float: left;
+}
+
+.classic #lotsoftools {
+    display: none;
+}
+
+#lotsoftools.hidden {
+    display: none;
+}
+#lotsoftools.showing {
+    display: block;
+}
+
+
+/*
+#lotsoftools {
+    display: none;
+}
+*/
+
+
+#toggle {
+    bottom: 0px;
+    left:0px;
+	border-radius: 20px;
+    -webkit-transition: all .6s ease-in-out;
+}
+
+#toggle.custom {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180);
+}
+#toggle.custom * button {
+    -webkit-transform: rotate(-180deg);
+}
+
+#toggle.dev * button {
+    -webkit-transform: rotate(-90deg);
+}
+
+#toggle.dev {
+    -webkit-transform: rotate(90deg);
+}
+
+#toggle.classic *  #toggle-custom {
+    opacity: .25;
+}
+
+#toggle.dev * #toggle-custom {
+    opacity: .25;
+}
+
+#toggle.custom * #toggle-dev {
+    opacity: .25;
+}
+
+
+
+#toggle.classic * #toggle-dev{
+    opacity: .25;
+}
+
+#toggle.dev * #toggle-classic{
+    opacity: .25;
+}
+
+#toggle.custom * #toggle-classic {
+    opacity: .25;
+}
+
+
+
+.topcoat-button-list #toggle-classic button {
+	background-image: url(topcoat/alert.svg);
+}
+.topcoat-button-list #toggle-dev button {
+	background-image: url(topcoat/build.svg);
+}
+.topcoat-button-list #toggle-custom button {
+	background-image: url(topcoat/pencil.svg);
+}
+
+/* Topcoat overrides for the toolbar ————————————————————————————————————*/
+.topcoat-button-list .topcoat-button-list__item:nth-child(100n) button {
+	border-top: 15px; 
+    opacity:.5;
+}
+
+
+
+.topcoat-button-list .topcoat-button-list__item button {
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 20px 20px;
+	text-indent: -9009px;
+
+}
+
+
+
+
+.topcoat-button-list #tool-move button {
+	background-image: url(img/ico-move.svg);
+}
+.topcoat-button-list #tool-text button {   
+	background-image: url(img/ico-text.svg);
+}
+.topcoat-button-list #tool-rounded-rect button {
+	background-image: url(img/ico-rounded-rect.svg);
+}
+.topcoat-button-list #tool-blue-pencil button {
+	background-image: url(img/ico-blue-pencil.svg);
+}
+.topcoat-button:focus,
+.topcoat-button--quiet:focus,
+.topcoat-button--large:focus,
+.topcoat-button--large--quiet:focus,
+.topcoat-button--cta:focus,
+.topcoat-button--large--cta:focus,
+.topcoat-button-list__button:focus,
+.topcoat-button-list__button--large:focus {
+  border: 0;
+  box-shadow: inset 0 0 4px 0 rgba(69,69,69,.5);
+  outline: 0;
+  background: #b11e1e;
+}
+
+/* Panel ————————————————————————————————————*/
+
+.panel {
+	right: 40px;
+	background: #1fb1d4;
+	width: 320px;
+	padding: 10px;
+	border-radius: 6px;
+}
+
+/* Select */
+.panel select {
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	border: 1px solid #2E3031;
+	border-radius: 3px;
+	padding: 0.5em;
+	font-size: 12px;
+	width: 100%;
+	background-color: #595B5B;
+	background-position: right;
+	background-size: 10px 10px;
+	background-repeat: no-repeat;
+	background-image: url(img/select-arrows.svg);
+	background-origin: content-box;
+	-webkit-appearance: none;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.2);
+	border-radius: 6px;
+}
+
+.panel select:hover {
+	background-color: #646666;
+}
+
+.panel h3,
+.panel label {
+	font-size: 12px;
+}
+
+.panel label {
+	line-height: 22px;
+	margin-left: 10px;
+}
+
+
+/* Linked field ————————————————————————————————————*/
+.linked-field {
+	margin: 20px 0 0 0;
+}
+  .linked-field {
+    padding: 0;
+    width: 100%;
+    height: 34px;
+    border-radius: 6px;
+    border: 1px solid #333434;
+    background-color: #424546;
+    overflow: hidden;
+    transition: all .13s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+  }
+
+.linked-field a.btn-link {
+  float: left;
+  display: flex;
+  width: 34px;
+  height: 34px;
+  background-color: #595B5B;
+  background-position: 50% 50%;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url(img/ico-link.svg);
+  background-origin: content-box;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-right: 1px solid #333434;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+}
+.linked-field .btn-link.active {
+  background-color: #3F4041;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+
+.linked-field input[type=text] {
+  -webkit-appearance: none;
+  float: left;
+  font-size: 12px;
+  display: flex;
+  width: 65px;
+  height: 33px;
+  padding: 10px;
+  color: #b9bbbc;
+  border: 1px solid transparent;
+  background-color: transparent;
+  transition: all .11s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+}
+.linked-field input[type=text]:first-child {
+  margin-left: 40px;
+}
+.linked-field input[type=text] {
+  border-right: 1px solid #333434;
+}
+.linked-field input[type=text]:last-child {
+  border-right: 0;
+}
+
+/* fixing focus later */
+.linked-field :focus,
+select:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* input Color ————————————————————*/
+
+.panel .property-color {
+	height: 33px;
+	line-height: 33px;
+	background: transparent;
+	display: flex;
+	margin-top: 20px;
+}
+
+input[type=color],
+input[type=color]::-webkit-color-swatch-wrapper {
+	display: flex;
+	padding: 0;
+	outline: 0;
+	border: 0;
+	background: transparent;
+}
+input[type=color] {
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+}
+input[type=color]::-webkit-color-swatch-wrapper {}
+input[type=color]::-webkit-color-swatch {
+  border: 0;
+  border-radius: 3px;
+  box-shadow:
+    inset 0 1px 2px rgba(0,0,0,.2),
+    0 1px 0 rgba(255,255,255,.5);
+}

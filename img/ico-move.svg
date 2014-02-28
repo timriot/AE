@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="51px" height="51px" viewBox="0 0 51 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>ico-move</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M0,0 L0,29 L9,20 L20,20 L0,0" id="Fill-1" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        <path d="M31.522,11.978 L36.5,20 L26.5,20 L31.522,11.978" id="Fill-2" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        <path d="M51.022,31.478 L43,36.5 L43,26.5 L51.022,31.478" id="Fill-3" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        <path d="M11.978,31.544 L20,26.475 L20,36.5 L11.978,31.544" id="Fill-4" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        <path d="M31.5,51.065 L26.5,43 L36.5,43 L31.5,51.065" id="Fill-5" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        <path d="M29,20 L29,29 L20,29 L20,34 L29,34 L29,43 L34,43 L34,34 L43,34 L43,29 L34,29 L34,20 L29,20" id="Fill-6" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

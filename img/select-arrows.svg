@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="64px" height="93px" viewBox="0 0 64 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>select-arrows</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M64.3198052,61.5 L0.680194847,61.5 L32.5,93.3198052 L64.3198052,61.5 Z" id="Rectangle-1" fill="#D8D8D8" sketch:type="MSShapeGroup"></path>
+        <path d="M0,31.8198052 L63.6396103,31.8198052 L31.8198052,0 L0,31.8198052 Z" id="Rectangle-1-copy" fill="#D8D8D8" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

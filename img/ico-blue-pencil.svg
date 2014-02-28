@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>ico-blue-pencil</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M7.326,31.949 C7.326,31.949 0.219,48.565 0.884,49.217 C1.564,49.867 18.213,42.834 18.213,42.834 L18.605,42.442 L7.718,31.555 L7.326,31.949" id="Fill-1" fill="#1E8CE2" sketch:type="MSShapeGroup"></path>
+        <path d="M10.396,28.846 L21.266,39.781 L42.44,18.667 L31.5,7.728 L10.396,28.846" id="Fill-2" fill="#1E8CE2" sketch:type="MSShapeGroup"></path>
+        <path d="M47.083,3 C43.292,-0.792 39.446,-0.202 37.678,1.551 L34.094,5.15 L44.996,16.036 L48.623,12.393 C50.257,10.76 50.833,6.75 47.083,3" id="Fill-3" fill="#1E8CE2" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

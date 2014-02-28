@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="timeline.css" type="text/css" media="screen">
+    <script type="text/javascript" src="../global.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="timeline.js"></script>
+    </head>
+  <body>
+
+ <div class="canvas">
+  <div id="SelectedZ">SelectedZ</div>
+  <div id="ObjectA">ObjectA</div>
+  <div id="ObjectB">ObjectB</div>
+  <div id="ObjectC">ObjectC</div>
+  <div id="ObjectD">ObjectD</div>
+  <div id="ObjectE">ObjectE</div>
+</div> 
+<div class="timeline">
+  <div class="timeline-header">
+    <div class="timeline-header-title">
+        Selected Z
+    </div>
+    <div class="timeline-header-animation">
+      Action
+      <button class="select">Open / Close</button>
+      
+    </div>
+    <div class="timeline-playback">
+        Duration
+      <input class="timeline-time" id="timeline-time" placeholder="1" value="3">
+       <button class="" id="playBack">▶</button>
+      </div>
+    
+  </div>
+  
+  <div class="timeline-scroll">
+    
+    <div class="timeline-object222222">
+      <div class="timeline-title">
+
+      </div>
+        <div class="timeline-animation-marker" id="ticks">
+        
+        <div class="timeline-marker">
+          <div class="marker-time">00:01</div>
+          <div class="icon-marker"></div>
+          <div id="timeline-fullmarker"></div>
+        </div>
+        <svg id="timeline-ruler"></svg>
+      </div>
+      <div class="timeline-scrollspace">
+      </div>
+    </div>
+    
+    <div class="timeline-object" id="t-ObjectA">
+      <div class="timeline-title">
+        Object A
+      </div>
+      <div class="timeline-animation">
+        <div class="timeline-animation-element"></div>
+        <div class="icon-keyframe" ></div>
+        <div class="icon-keyframe" ></div>
+      </div>
+      <div class="timeline-scrollspace">
+      </div>
+    </div>
+    
+    <div class="timeline-object" id="t-ObjectB">
+      <div class="timeline-title">
+        Object B
+      </div>
+      <div class="timeline-animation">
+        <div class="timeline-animation-element"></div>
+        <div class="icon-keyframe"></div>
+        <div class="icon-keyframe"></div>
+      </div>
+      <div class="timeline-scrollspace">
+      </div>
+     </div>
+    
+     <div class="timeline-object" id="t-ObjectC">
+      <div class="timeline-title">
+        Object C
+      </div>
+      <div class="timeline-animation">
+        <div class="timeline-animation-element"></div>
+        <div class="icon-keyframe"></div>
+        <div class="icon-keyframe"></div>
+      </div>
+      <div class="timeline-scrollspace">
+      </div>
+     </div>
+    
+     <div class="timeline-object selected" id="t-ObjectD">
+      <div class="timeline-title">
+        Object D
+      </div>
+      <div class="timeline-animation">
+        <div class="timeline-animation-element"></div>
+        <div class="icon-keyframe"></div>
+        <div class="icon-keyframe"></div>
+      </div>
+      <div class="timeline-scrollspace">
+      </div>
+     </div>
+    
+     <div class="timeline-object" id="t-ObjectE">
+      <div class="timeline-title">
+        Object E
+      </div>
+      <div class="timeline-animation">
+        <div class="timeline-animation-element"></div>
+        <div class="icon-keyframe"></div>
+        <div class="icon-keyframe"></div>
+      </div>
+      <div class="timeline-scrollspace">
+      </div>
+     </div>
+ 
+
+    
+   </div>
+</div>
+
+<p></p>
+  </body>
+</html>
